@@ -11,6 +11,8 @@ import SwiftUI
 
 public struct GCProgressView: View {
     
+    // MARK: Properties
+    
     /// The progress view style.
     
     public let style: GCProgressView.Style
@@ -24,6 +26,22 @@ public struct GCProgressView: View {
     private var adjustedProgress: Double {
         min(max(0, self.progress), 1)
     }
+    
+    // MARK: Initializers
+    
+    /// Creates an instance that displays the progress of a task over time.
+    ///
+    /// - Parameter style: The progress view style.
+    /// - Parameter progress: A binding indicating the progress of a task.
+    ///
+    /// - Returns: A progress view that displays the progress of a task over time.
+    
+    public init(style: GCProgressView.Style, progress: Binding<Double>) {
+        self.style = style
+        self._progress = progress
+    }
+    
+    // MARK: Body
     
     public var body: some View {
         GeometryReader { geometry in

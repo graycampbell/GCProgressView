@@ -8,7 +8,21 @@
 import Foundation
 
 public extension GCProgressView {
+    
+    /// The styles permitted for the progress view.
+    
     enum Style: String, CaseIterable {
-        case bar, circle, ring
+        
+        /// A horizontal bar that animates from left to right.
+        
+        case bar
+        
+        /// A circle that animates clockwise.
+        
+        case circle
+        
+        /// A ring that animates clockwise.
+        
+        case ring
     }
 }

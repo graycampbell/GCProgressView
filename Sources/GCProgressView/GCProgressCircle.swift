@@ -8,12 +8,17 @@
 import SwiftUI
 
 struct GCProgressCircle: Shape {
+    
+    // MARK: Properties
+    
     var progress: Double
     
     var animatableData: Double {
         get { self.progress }
         set { self.progress = newValue }
     }
+    
+    // MARK: Path
     
     func path(in rect: CGRect) -> Path {
         guard self.progress > .zero else {
