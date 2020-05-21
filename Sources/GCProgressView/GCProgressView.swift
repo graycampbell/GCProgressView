@@ -58,6 +58,10 @@ public struct GCProgressView: View {
             else if self.style == .circle {
                 GCProgressCircle(progress: self.adjustedProgress)
                     .fill()
+                    .background(
+                        GCProgressCircle(progress: 1)
+                            .fill(Color(.systemFill))
+                    )
             }
             else {
                 GCProgressRing(progress: self.adjustedProgress)
