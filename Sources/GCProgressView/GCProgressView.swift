@@ -62,6 +62,11 @@ public struct GCProgressView: View {
             else {
                 GCProgressRing(progress: self.adjustedProgress)
                     .stroke(style: self.ringStrokeStyle(geometry))
+                    .background(
+                        GCProgressRing(progress: 1)
+                            .stroke(style: self.ringStrokeStyle(geometry))
+                            .foregroundColor(Color(.systemFill))
+                    )
                     .padding(self.ringPadding(geometry))
             }
         }
